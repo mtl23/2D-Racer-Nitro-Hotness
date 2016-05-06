@@ -1,0 +1,15 @@
+﻿Build started 4/2/2016 11:58:15 PM.
+     1>Project "C:\Users\Jason\Desktop\JanssonSource\ALL_BUILD.vcxproj" on node 5 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\ALL_BUILD\ALL_BUILD.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/Users/Jason/Downloads/jansson-master/jansson-master/CMakeLists.txt
+         CMake does not need to re-run because C:\Users\Jason\Desktop\JanssonSource\CMakeFiles\generate.stamp is up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\ALL_BUILD\ALL_BUILD.unsuccessfulbuild".
+         Touching "x64\Debug\ALL_BUILD\ALL_BUILD.lastbuildstate".
+     1>Done Building Project "C:\Users\Jason\Desktop\JanssonSource\ALL_BUILD.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.15
