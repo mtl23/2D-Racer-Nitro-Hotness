@@ -1,4 +1,4 @@
-﻿Build started 5/5/2016 10:45:36 PM.
+﻿Build started 5/8/2016 9:49:24 PM.
      1>Project "C:\Users\mtl23\2Dgames\NitroHotness\win32\gametest.vcxproj" on node 2 (build target(s)).
        Project file contains ToolsVersion="14.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
      1>InitializeBuildStatus:
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.08
+Time Elapsed 00:00:00.09

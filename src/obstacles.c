@@ -22,11 +22,12 @@ ObstacleList newObstacleList()
 	ObstacleList my_obst;
 		for(i=0;i<2700;i++)
 		{
+			
 			switch(i)
 			{
 			case(700):
 		
-			my_obst.ObstList[i] = 1; //rock
+			my_obst.ObstList[i] = 2; //rock
 				break;
 
 			case(1200):

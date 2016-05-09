@@ -59,6 +59,37 @@ void roadDraw(Road_M myRoad, map mymap, player* p1) //this is reponsible for scr
 			dst.y =560-(60-i)*i;		  //the road segments y position on the screen
 			dst.h=60-i;					  // the height of the road segment
 
+			switch(i)
+			{
+			case 0:
+			dst.x -= 60;
+			dst.w += 120;
+			break;
+
+			case 2:
+			dst.x += 4;
+			dst.w -= 10;
+			break;
+
+			case 3:
+			dst.x += 4;
+			dst.w -= 10;
+			break;
+
+			
+			case 5:
+			dst.x -= 40;
+			dst.w += 80;
+			break;
+
+			case 6:
+			dst.x -= 85;
+			dst.w += 170;
+			break;
+			
+
+			}
+
 
 //slog(" car is at point %i ,%s next up is", int(p1->position) ,mymap.segments[i] );
 for(y=1;y<YMAX+1;y++)
@@ -68,6 +99,7 @@ for(y=1;y<YMAX+1;y++)
 			{
 			dst.x =((p1->playerX-500)+int(2000*(.149*i))/2); //the road segments x position on the screen //(1.05*p1->playerX*i)+??
 			dst.w = int(2000*(1.3-.149*i));   // the width of the road segment
+			//myRoad.pathList[i]->sprite = *spriteLoad("images/road7.png",dst.x,dst.y);
 			}
 		}
 			SDL_RenderCopy(renderer,myRoad.pathList[i]->sprite.image,NULL,&dst);
@@ -121,12 +153,14 @@ void roadFetch(Road_M myRoad, map mymap, player* p1)
 			}
 	//		slog("loaded %s ",myRoad.pathList[screenpos]->sprite.filename);
 	//		slog("put new piece into position %i with sprite %s", p1->position, myRoad.pathList[screenpos]->sprite.filename )
+	
+	
 
-	if(p1->position>=3300)// if map size was more dynamic, this should be too now the map is continuous
+	if(p1->position>=3500)// if map size was more dynamic, this should be too now the map is continuous
 	{
 		p1->accel -= .0411;
 	}
-	if(p1->position>=3350)// if map size was more dynamic, this should be too now the map is continuous
+	if(p1->position>=3700)// if map size was more dynamic, this should be too now the map is continuous
 	{
 		p1->speed = 0;
 	}

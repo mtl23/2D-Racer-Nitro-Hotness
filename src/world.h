@@ -8,7 +8,7 @@
 */
 typedef struct
 {
-	char* segments[3600]; //this char array holds data for the entire map each entry is what road type should be drawn
+	char* segments[4000]; //this char array holds data for the entire map each entry is what road type should be drawn
 
 }map;
 

@@ -10,7 +10,7 @@ AI new_AI()
 	temp.obj.sprite = *spriteLoad("images/rival.png",128,128);
 	temp.distance = 0;
 	temp.position = 0;
-	temp.speed = 1.6;
+	temp.speed = 2.2;
 	return temp;
 
 }
@@ -63,7 +63,7 @@ void update_AI(AI *rival,player *p1)
 
 	if(rival->position>=3500)// if map size was more dynamic, this should be too now the map is continuous
 	{
-		rival->position = 3500;
+		rival->position = 3600;
 	}
 
 

@@ -19,7 +19,7 @@ extern int lvl;
 map setWorld()
 {
 	map mymap;
-	int numSegments =3600;
+	int numSegments =4000;
 	if(lvl ==0)*mymap.segments = (char*)malloc(sizeof(char)* numSegments);
 	memset(mymap.segments, 0, sizeof(char)* numSegments);
 	int i;
@@ -60,7 +60,7 @@ map setWorld()
 				}
 	}//end switch
 
-	if(i>3400)
+	if(i>3500)
 	{
 	if(i%2 ==1)
 		{
@@ -108,7 +108,7 @@ map setWorld()
 				}
 	}//end switch
 
-	if(i>3400)
+	if(i>3500)
 	{
 	if(i%2 ==1)
 		{
@@ -157,7 +157,7 @@ map setWorld()
 				}
 	}//end switch
 
-	if(i>3400)
+	if(i>3500)
 	{
 	if(i%2 ==1)
 		{

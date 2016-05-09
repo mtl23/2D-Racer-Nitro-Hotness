@@ -21,9 +21,9 @@
 #include "MainMenu.h"
 #include "fileWriter.h"
 	
-	extern Uint32 mytime;
-	extern Uint32 oldTime;
-	extern Uint32 currentTime;
+	extern int mytime;
+	extern int oldTime;
+	extern int currentTime;
    SDL_Window* mainWindow;
    SDL_Renderer* renderer;
    extern int entityMax;
@@ -75,32 +75,10 @@ done = 0;
 
 //The music that will be played
    Mix_Music *music = NULL;
-//The sound effects that will be used
-Mix_Chunk *scratch = NULL;
-Mix_Chunk *high = NULL;
-Mix_Chunk *med = NULL;
-Mix_Chunk *low = NULL;
-
-    //Load the sound effects
-    high = Mix_LoadWAV( "sfx/Hit_00.wav" );
-    med = Mix_LoadWAV( "sfx/Hit_02.wav" );
-    low = Mix_LoadWAV( "sfx/Hit_03.wav" );
-
-	if(low == NULL)              
-	{
-  printf( "Failed to load low sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
-	}
-	if(high == NULL)              
-	{
-	  printf( "Failed to load high sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
-	}
-	if(med == NULL)              
-	{
-	  printf( "Failed to load med sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
-	}	
-	
 
 
+   Mix_Chunk *buzz = NULL;
+    buzz = Mix_LoadWAV( "sfx/buzz.wav" );
 	readSave(&mew);
 	showTitle();
 	showMain();
@@ -140,28 +118,6 @@ do
 						switch( e.key.keysym.sym )
 						{
 						
-						case SDLK_1:
-						 if( Mix_PlayChannel( -1, high, 0 ) == -1 )
-                    {
-                        return 1;    
-                    }
-							break;
-
-						case SDLK_2:
-					 if( Mix_PlayChannel( -1, med, 0 ) == -1 )
-                    {
-                        return 1;    
-                    }
-							break;
-
-						case SDLK_3:
-					 if( Mix_PlayChannel( -1, low, 0 ) == -1 )
-                    {
-                        return 1;    
-                    }
-							break;
-
-				
 						case SDLK_LEFT:
 				//		slog("left is down");	
 						mew.playerX += 3;
@@ -177,7 +133,8 @@ do
 						case SDLK_UP:
 					//	slog("up is down");
 						 mew.accel = (mew.accel + .00008);
-						break;
+						 Mix_PlayChannel( 1, buzz, 0 );
+						 break;
 						
 						case SDLK_DOWN:
 					//	slog("down is down");
@@ -195,6 +152,7 @@ do
 						case SDLK_RETURN :
 						if(mew.done ==1)
 						{
+							Mix_HaltMusic();
 							if(GP == 1)
 							{
 							mew.done=0;
@@ -232,6 +190,7 @@ do
 						case SDLK_UP:
 					//	slog("up is up");
 						mew.accel = (mew.accel - .001);
+						Mix_HaltChannel(1);
 						e.type = SDLK_CLEAR;
 						break;
 
@@ -277,12 +236,7 @@ do
 }
   }while(!done);
       //Free the sound effects
-    Mix_FreeChunk( scratch );
-    Mix_FreeChunk( high );
-    Mix_FreeChunk( med );
-    Mix_FreeChunk( low );
-    
-    //Free the music
+   //Free the music
   Mix_FreeMusic( music );
   CloseEntitySystem();
   CloseSpriteSystem();

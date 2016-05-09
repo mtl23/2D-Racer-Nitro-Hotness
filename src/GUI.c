@@ -9,9 +9,9 @@
 #include "simple_logger.h"
 
 extern SDL_Renderer* renderer;
-Uint32 mytime;
-Uint32 oldTime;
-Uint32 currentTime;
+int mytime;
+int oldTime;
+int currentTime;
 Uint32 mil;
 Uint32 mil2;
 Uint32 sec;
@@ -48,9 +48,10 @@ GUI InitGUI()
 	temp.rankdst.w =65;
 	temp.rankdst.h =80;
 
-	mytime = 0;
-	currentTime = 0;
-	oldTime = 0;
+	mytime = SDL_GetTicks();
+	currentTime = SDL_GetTicks();
+	oldTime = SDL_GetTicks();
+
 	
 	temp.rankdst2.x = 280;
 	temp.rankdst2.y = 0;
@@ -86,8 +87,8 @@ void DrawGui(GUI HUD, player p1)
 	int s1f;
 	int s2f;
 	
-	digits = *spriteLoad("images/num1.png",36,64);
-	digits2 = *spriteLoad("images/num2.png",24,24);
+	digits = *spriteLoadNoEdits("images/num1.png",36,64);
+	digits2 = *spriteLoadNoEdits("images/num2.png",24,24);
 	
 		digits.color.r = 0;
 		digits.color.b = 0;
@@ -152,9 +153,9 @@ void DrawGui(GUI HUD, player p1)
 
 		s2f = int(p1.speed*15)%100/10;
 
-		spriteDraw(&digits,renderer,int(p1.speed*15)%10,s1);
+		spriteDrawNoEdits(&digits,renderer,int(p1.speed*15)%10,s1);
 		
-		spriteDraw(&digits,renderer,s2f,s2);
+		spriteDrawNoEdits(&digits,renderer,s2f,s2);
 			
 		currentTime = SDL_GetTicks();
 		mytime = currentTime- oldTime;
@@ -170,18 +171,18 @@ void DrawGui(GUI HUD, player p1)
 
 		//slog("%i", mil2);
 		//timers
-		spriteDraw(&digits2,renderer,mil2,t1);
-		spriteDraw(&digits2,renderer,mil,t2);
+		spriteDrawNoEdits(&digits2,renderer,mil2,t1);
+		spriteDrawNoEdits(&digits2,renderer,mil,t2);
 		
-		spriteDraw(&digits2,renderer,10,t3);
+		spriteDrawNoEdits(&digits2,renderer,10,t3);
 		
-		spriteDraw(&digits2,renderer,sec,t4);
-		spriteDraw(&digits2,renderer,sec2,t5);
+		spriteDrawNoEdits(&digits2,renderer,sec,t4);
+		spriteDrawNoEdits(&digits2,renderer,sec2,t5);
 		
-		spriteDraw(&digits2,renderer,10,t6);
+		spriteDrawNoEdits(&digits2,renderer,10,t6);
 		
-		spriteDraw(&digits2,renderer,min,t7);
-		spriteDraw(&digits2,renderer,min2,t8);
+		spriteDrawNoEdits(&digits2,renderer,min,t7);
+		spriteDrawNoEdits(&digits2,renderer,min2,t8);
 
 
 		HUD.GUI3 = SDL_CreateTextureFromSurface(renderer,HUD.rank);

@@ -54,6 +54,8 @@ void CloseSpriteSystem();
 */
 Sprite_M *spriteLoad(char *filename,int sizeX,int sizeY);
 
+
+Sprite_M *spriteLoadNoEdits(char *filename,int sizeX,int sizeY);
 /**
 *
 *@brief frees a single sptite back to memory
@@ -70,5 +72,5 @@ void spriteFree(Sprite_M *sprite);
 @param position:The position on the screen to draw the sprite onto, the Sprite size was already configured during load
 */
 void spriteDraw(Sprite_M *sprite,  SDL_Renderer *renderer, int frame, Vector2D position);
-
+void spriteDrawNoEdits(Sprite_M *sprite,  SDL_Renderer *renderer, int frame, Vector2D position);
 #endif

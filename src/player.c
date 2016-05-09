@@ -11,6 +11,10 @@
 #include "entity.h"
 #include "player.h"
 
+
+	extern int mytime;
+	extern int oldTime;
+	extern int currentTime;
 extern SDL_Renderer* renderer;
 
 player newPlayer()
@@ -53,6 +57,10 @@ void UpdatePlayer(player* user)
 	user->maxspeed = 4 + ((user->SUP)/4);
 	user->maxaccel = .02 + (user->AUP/100);
 
+	if(user->done == 1)
+	{
+	currentTime = mytime;
+	}
 	
 	if(user->accel > user->maxaccel + user->AUP ) // cant accelerate forever
 		{
