@@ -25,11 +25,7 @@ ObstacleList newObstacleList()
 			
 			switch(i)
 			{
-			case(700):
-		
-			my_obst.ObstList[i] = 2; //rock
-				break;
-
+			
 			case(1200):
 		
 			my_obst.ObstList[i] = 2; //dirt

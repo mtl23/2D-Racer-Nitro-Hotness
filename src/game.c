@@ -132,7 +132,7 @@ do
 
 						case SDLK_UP:
 					//	slog("up is down");
-						 mew.accel = (mew.accel + .00008);
+						 mew.accel = (mew.accel + .00007);
 						 Mix_PlayChannel( 1, buzz, 0 );
 						 break;
 						

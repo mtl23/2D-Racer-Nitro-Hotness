@@ -247,6 +247,17 @@ strcpy(option4 ,"Exit");
 	SDL_RenderCopy(renderer,Quit,NULL,&r4);  
 	SDL_RenderPresent(renderer);
   
+	SDL_FreeSurface(Prixx);
+	SDL_DestroyTexture(Prix);
+	SDL_FreeSurface(Stagee);
+	SDL_DestroyTexture(Stage);
+	SDL_FreeSurface(Editt);
+	SDL_DestroyTexture(Edit);
+	SDL_FreeSurface(Quitt);
+	SDL_DestroyTexture(Quit);
+	
+
+
 	SDL_Event e;
 	SDL_PollEvent( &e ); 
 		if(&e)
@@ -320,14 +331,6 @@ strcpy(option4 ,"Exit");
 	
   } while(!done);
 
-	SDL_FreeSurface(Prixx);
-	SDL_DestroyTexture(Prix);
-	SDL_FreeSurface(Stagee);
-	SDL_DestroyTexture(Stage);
-	SDL_FreeSurface(Editt);
-	SDL_DestroyTexture(Edit);
-	SDL_FreeSurface(Quitt);
-	SDL_DestroyTexture(Quit);
 	 return;
   }
 
@@ -450,7 +453,17 @@ strcpy(option4 ,"Return to Main");
 	SDL_RenderCopy(renderer,LVL3,NULL,&r3);  
 	SDL_RenderCopy(renderer,Quit,NULL,&r4);  
 	SDL_RenderPresent(renderer);
- 	SDL_Event e;
+ 	
+	SDL_FreeSurface(Prixx);
+	SDL_DestroyTexture(LVL1);
+	SDL_FreeSurface(Stagee);
+	SDL_DestroyTexture(LVL2);
+	SDL_FreeSurface(Editt);
+	SDL_DestroyTexture(LVL3);
+	SDL_FreeSurface(Quitt);
+	SDL_DestroyTexture(Quit);
+	
+	SDL_Event e;
 	SDL_PollEvent( &e ); 
 		if(&e)
 			{
@@ -517,14 +530,7 @@ strcpy(option4 ,"Return to Main");
     }
 	
   } while(!done);
-	SDL_FreeSurface(Prixx);
-	SDL_DestroyTexture(LVL1);
-	SDL_FreeSurface(Stagee);
-	SDL_DestroyTexture(LVL2);
-	SDL_FreeSurface(Editt);
-	SDL_DestroyTexture(LVL3);
-	SDL_FreeSurface(Quitt);
-	SDL_DestroyTexture(Quit);
+	
   return;
 }
 
@@ -549,9 +555,7 @@ SDL_Texture* Quit;
 SDL_Rect r1;
 SDL_Rect r2;
 SDL_Rect r3;
-
 SDL_Rect header;
-
 
 char option1[32];
 strcpy(option1 ,"Next");
@@ -572,8 +576,6 @@ SDL_Surface *Nextt;
 SDL_Surface *Editt;
 SDL_Surface *Mainn;
 SDL_Surface *Headd;
-
-	
 		
 	r1.x = 350;
 	r1.y = 300;
@@ -639,17 +641,22 @@ SDL_Surface *Headd;
 	Edit = SDL_CreateTextureFromSurface( renderer, Editt );
 	Main = SDL_CreateTextureFromSurface( renderer, Mainn );
 	Head = SDL_CreateTextureFromSurface( renderer, Headd );
-		SDL_RenderCopy(renderer,background,NULL,&screen);
-	
+	SDL_RenderCopy(renderer,background,NULL,&screen);
 	SDL_RenderCopy(renderer,Next,NULL,&r1);  
 	SDL_RenderCopy(renderer,Edit,NULL,&r2);  
-	
-			
-	
 	SDL_RenderCopy(renderer,Head,NULL,&header);
 	SDL_RenderCopy(renderer,Main,NULL,&r3);
 
 	SDL_RenderPresent(renderer);
+
+	  	SDL_FreeSurface(Nextt);
+	SDL_DestroyTexture(Next);
+	SDL_FreeSurface(Editt);
+	SDL_DestroyTexture(Edit);
+	SDL_FreeSurface(Mainn);
+	SDL_DestroyTexture(Main);
+	SDL_FreeSurface(Headd);
+	SDL_DestroyTexture(Head);
 
  	SDL_Event e;
 	SDL_PollEvent( &e ); 
@@ -720,16 +727,6 @@ SDL_Surface *Headd;
     }
 	
   } while(!done);
-
-  	SDL_FreeSurface(Nextt);
-	SDL_DestroyTexture(Next);
-	SDL_FreeSurface(Editt);
-	SDL_DestroyTexture(Edit);
-	SDL_FreeSurface(Mainn);
-	SDL_DestroyTexture(Main);
-	SDL_FreeSurface(Headd);
-	SDL_DestroyTexture(Head);
-  
   return;
 }
 
@@ -832,8 +829,6 @@ RE1.x = 380;
 RE1.y = 70;
 RE1.w = 300;
 RE1.h = 24;
-
-
 
 strcpy(rule2 ,"Use UP and DOWN to select upgrade");
 
@@ -1057,8 +1052,6 @@ readSave(&mew);
 							case SDLK_RETURN:
 							writeToSave(&mew);
 							Mix_HaltMusic();
-							//oldTime = SDL_GetTicks();
-							//currentTime = SDL_GetTicks();
 							done = 1;
 							break;
 							}
@@ -1090,17 +1083,8 @@ readSave(&mew);
   
   } while(!done);
  
-  SDL_DestroyTexture(R1);
-  SDL_FreeSurface(RULE1);
-  SDL_DestroyTexture(R2);
-  SDL_FreeSurface(RULE2);
-  SDL_DestroyTexture(R3);
-  SDL_FreeSurface(RULE3);
-  SDL_DestroyTexture(R4);
-  SDL_FreeSurface(RULE4);
-  SDL_DestroyTexture(WEL);
-  SDL_FreeSurface(Wel);
-  
+ 
+
   return;
 		
 
@@ -1462,6 +1446,15 @@ readSave(&mew);
   
   } while(!done);
  
+  SDL_DestroyTexture(H);
+  SDL_FreeSurface(HANDLING);
+  SDL_DestroyTexture(A);
+  SDL_FreeSurface(ACCEL);
+  SDL_DestroyTexture(S);
+  SDL_FreeSurface(SPEED);
+  SDL_DestroyTexture(P);
+  SDL_FreeSurface(POINTS);
+  
   SDL_DestroyTexture(R1);
   SDL_FreeSurface(RULE1);
   SDL_DestroyTexture(R2);

@@ -151,9 +151,9 @@ void DrawGui(GUI HUD, player p1)
 			HUD.rank = R2 ;
 		}
 
-		s2f = int(p1.speed*15)%100/10;
+		s2f = int(p1.speed*10)%100/10;
 
-		spriteDrawNoEdits(&digits,renderer,int(p1.speed*15)%10,s1);
+		spriteDrawNoEdits(&digits,renderer,int(p1.speed*10)%10,s1);
 		
 		spriteDrawNoEdits(&digits,renderer,s2f,s2);
 			

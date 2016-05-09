@@ -97,10 +97,27 @@ for(y=1;y<YMAX+1;y++)
 			//slog("%i:%s", int(p1->position+y) ,mymap.segments[int(p1->position)+y] );
 			if(int(p1->position)+y>300 && int(p1->position)+y<700 && lvl ==0 ) //can be mad elevel specific
 			{
-			dst.x =((p1->playerX-500)+int(2000*(.149*i))/2); //the road segments x position on the screen //(1.05*p1->playerX*i)+??
+			dst.x =((1.05*p1->playerX*i)+(p1->playerX-500)+int(2000*(.149*i))/2); //the road segments x position on the screen //(1.05*p1->playerX*i)+??
 			dst.w = int(2000*(1.3-.149*i));   // the width of the road segment
 			//myRoad.pathList[i]->sprite = *spriteLoad("images/road7.png",dst.x,dst.y);
 			}
+
+
+			if(int(p1->position)+y>1300 && int(p1->position)+y<1700 && lvl ==2 ) //can be mad elevel specific
+			{
+			dst.x =((1.05*p1->playerX*i)+(p1->playerX-500)+int(2000*(.149*i))/2); //the road segments x position on the screen //(1.05*p1->playerX*i)+??
+			dst.w = int(2000*(1.3-.149*i));   // the width of the road segment
+			//myRoad.pathList[i]->sprite = *spriteLoad("images/road7.png",dst.x,dst.y);
+			}
+
+			if(int(p1->position)+y>2300 && int(p1->position)+y<2700 && lvl ==3 ) //can be mad elevel specific
+			{
+			dst.x =((1.05*p1->playerX*i)+(p1->playerX-500)+int(2000*(.149*i))/2); //the road segments x position on the screen //(1.05*p1->playerX*i)+??
+			dst.w = int(2000*(1.3-.149*i));   // the width of the road segment
+			//myRoad.pathList[i]->sprite = *spriteLoad("images/road7.png",dst.x,dst.y);
+			}
+
+
 		}
 			SDL_RenderCopy(renderer,myRoad.pathList[i]->sprite.image,NULL,&dst);
 			
